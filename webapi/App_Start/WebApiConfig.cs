@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using BusinessServices;
 using webapi.config.DependencyInjection;
+using webapi.config.Filters;
 
 namespace webapi
 {
@@ -14,6 +15,7 @@ namespace webapi
             // Web API configuration and services
             AutoMapperConfig.CreateMaps();
             StructureDIResolver.RegisterDependencyResolver(config);
+            //GlobalConfiguration.Configuration.Filters.Add(new ApiAuthenticationFilter(true));
             // Web API routes
             config.MapHttpAttributeRoutes();
 

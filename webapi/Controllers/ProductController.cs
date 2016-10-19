@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using webapi.config.ActionFilters;
 
 namespace webapi.Controllers
 {
+    [AuthorizationRequired]
     public class ProductController : ApiController
     {
         private readonly IProductServices _productServices;
