@@ -13,14 +13,14 @@ namespace BusinessServices.security
     public class TokenServices : ITokenServices
     {
         #region Private member variables.
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         #endregion
 
         #region Public constructor.
         /// <summary>
         /// Public constructor.
         /// </summary>
-        public TokenServices(UnitOfWork unitOfWork)
+        public TokenServices(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

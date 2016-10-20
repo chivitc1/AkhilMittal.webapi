@@ -9,7 +9,7 @@ using DataModels.Repositories;
 
 namespace DataModels.unitofwork
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable, IUnitOfWork
     {
         #region Private member variables...
 

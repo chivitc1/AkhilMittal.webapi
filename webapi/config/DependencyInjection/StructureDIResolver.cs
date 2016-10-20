@@ -10,7 +10,7 @@ namespace webapi.config.DependencyInjection
         {
             IContainer container = new Container(c =>
             {
-                c.For<UnitOfWork>().Singleton().Use<UnitOfWork>();
+                c.For<IUnitOfWork>().Singleton().Use<UnitOfWork>();
                 //c.For(typeof(ITreeRepository<>)).Use(typeof(TreeRepository<>)).Ctor<ISession>("session").Is(SessionManager.GetCurrentSession());
                 //c.For(typeof(IRepository<>)).Use(typeof(Repository<>)).Ctor<ISession>("uow").Is(SessionManager.GetCurrentSession());
                 //c.For(typeof(ICategoryRepository)).Use(typeof(CategoryRepository)).Ctor<ISession>("session").Is(SessionManager.GetCurrentSession());

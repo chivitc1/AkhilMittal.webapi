@@ -21,4 +21,15 @@ namespace BusinessServices
             
         }
     }
+
+    public static class MyAutoMapperHelper
+    {
+        public static void CreateMap<TSource, TDest>()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<TSource, TDest>();
+            });
+        }
+    }
 }

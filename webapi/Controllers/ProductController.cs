@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using webapi.config.ActionFilters;
+using webapi.config.ErrorHelper;
 
 namespace webapi.Controllers
 {
@@ -42,11 +43,20 @@ namespace webapi.Controllers
         }
 
         // GET api/product/5
+        [HttpGet]
+        [Route("api/product/{id?}")]
         public HttpResponseMessage Get(int id)
         {
+            if(id == null || id <= 0)
+                throw new ApiException()
+                {
+                    ErrorCode = (int)HttpStatusCode.BadRequest,
+                    ErrorDescription = "Bad Request..."
+                };
             var product = _productServices.GetProductById(id);
             if (product == null)
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No product found for this id");
+                throw new ApiDataException(1001, "No product found for this id.", HttpStatusCode.NotFound);
+            //return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No product found for this id");
             return Request.CreateResponse(HttpStatusCode.OK, product);
         }
 
