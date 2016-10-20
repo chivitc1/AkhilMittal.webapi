@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Collections;
 
-namespace BusinessServices.Tests.TestHelper
+namespace TestsHelper
 {
     public static class AssertObjects
     {

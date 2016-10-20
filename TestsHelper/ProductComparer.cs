@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataModels;
 
-namespace BusinessServices.Tests.TestHelper
+namespace TestsHelper
 {
     public class ProductComparer : IComparer, IComparer<Product>
     {

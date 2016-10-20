@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using BusinessEntities;
-using BusinessServices.Tests.TestHelper;
 using DataModels;
 using DataModels.Repositories;
 using DataModels.unitofwork;
 using Moq;
 using NUnit.Framework;
+using TestsHelper;
 
 namespace BusinessServices.Tests
 {
